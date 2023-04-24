@@ -121,7 +121,6 @@ else:
 
     with cot2_col2:
         if 'run' in st.session_state and st.session_state['run']:
-            # st.snow()
             st.subheader('Segmented Image')
             st.image(st.session_state['pred'][st.session_state['slice']], caption='Segmented Image', use_column_width='always', channels='RGB', clamp=True)
 
