@@ -16,15 +16,15 @@ from model_s.aunet import multi_unet_model as attention_unet
 
 
 model_name = {
-        'U-Net': [unet, '/home/vaibhav/U-Net/App/weights/unet.h5'], 
-        'M-Net': [mnet, '/home/vaibhav/U-Net/App/weights/mnet.h5'], 
-        'Attention U-Net': [attention_unet, '/home/vaibhav/U-Net/App/weights/aunet.h5'], 
-        'Attention M-Net': [attention_mnet, '/home/vaibhav/U-Net/App/weights/amnet.h5'],
+        'U-Net': [unet, '/app/cardiac-mri-image-segmentor/weights/unet.h5'], 
+        'M-Net': [mnet, '/app/cardiac-mri-image-segmentor/weights/mnet.h5'], 
+        'Attention U-Net': [attention_unet, '/app/cardiac-mri-image-segmentor/weights/aunet.h5'], 
+        'Attention M-Net': [attention_mnet, '/app/cardiac-mri-image-segmentor/weights/amnet.h5'],
     }
 
 st.set_page_config(layout="wide", page_icon=':heart:', page_title='MIS')
 
-st.title('MRI Image Segmentor')
+st.title('Cardiac MRI Segmentor')
 
 cot1 = st.container()
 cot3 = st.container()
@@ -121,6 +121,7 @@ else:
 
     with cot2_col2:
         if 'run' in st.session_state and st.session_state['run']:
+            # st.snow()
             st.subheader('Segmented Image')
             st.image(st.session_state['pred'][st.session_state['slice']], caption='Segmented Image', use_column_width='always', channels='RGB', clamp=True)
 
